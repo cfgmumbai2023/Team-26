@@ -55,7 +55,7 @@ const getStudentById = async (req, res) => {
   try {
     const objectId = req.params.id;
 
-    const object = await findById(objectId);
+    const object = await Student.findById(objectId);
 
     if (!object) {
       return res.status(404).json({ error: "Object not found" });

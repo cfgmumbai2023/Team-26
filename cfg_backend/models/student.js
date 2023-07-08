@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
+  udid: {
+    type: String,
+    required: [true, "UDID is required"],
+  },
   name: {
     type: String,
     required: [true, "Name is required"],
@@ -16,6 +20,10 @@ const studentSchema = new mongoose.Schema({
   dateOfBirth: {
     type: Date,
     required: [true, "DOB is required"],
+  },
+  dateOfAdmission: {
+    type: Date,
+    required: [true, "DOA is required"],
   },
   address: {
     type: String,

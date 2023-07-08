@@ -40,31 +40,39 @@ const createStudent = asyncHandler(async (req, res) => {
   res.status(201).json(student);
 });
 
-// @desc Update student
-// @route PATCH /api/student/:id
-// @access private
-
-const updateStudent = asyncHandler(async (req, res) => {
-  const { studentId, programId, newScore } = req.body;
+const getAllStudents = async (req, res) => {
   try {
-    const student = await Student.findById(studentId);
-
-    const programToUpdate = student.program.find(
-      (program) => program.program.toString() === programId
-    );
-
-    if (!programToUpdate) {
-      console.log("Program not found");
-      return;
-    }
-
-    programToUpdate.score = newScore;
-
-    await student.save();
-    console.log("Score updated successfully");
+    const users = await Student.find(); // Use appropriate query or method to fetch data from MongoDB
+    res.json(users);
   } catch (error) {
     console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
-});
+};
+
+const getStudentById = async (req, res) => {
+  try {
+    const objectId = req.params.id;
+
+    const object = await findById(objectId);
+
+    if (!object) {
+      return res.status(404).json({ error: "Object not found" });
+    }
+
+    // Send the retrieved object as a response
+    res.json(object);
+  } catch (error) {
+    console.error("Error fetching object:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+module.exports = {
+  createStudent,
+  getAllStudents,
+  getStudentById,
+  updateStudent,
+};
 
 module.exports = { createStudent, updateStudent };

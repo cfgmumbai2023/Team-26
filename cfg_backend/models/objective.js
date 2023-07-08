@@ -10,5 +10,4 @@ const objectiveSchema = new mongoose.Schema({
     required: [true, "objective Id is required"],
   },
 });
-
-const objective = mongoose.model("Objective", objectiveSchema);
+module.exports = mongoose.model("Objective", objectiveSchema);

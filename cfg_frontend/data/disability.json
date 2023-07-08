@@ -1,0 +1,19 @@
+{
+  "disability": [
+    {
+      "disability_count": 1,
+      "student_count": 3,
+      "disability_type": "physical"
+    },
+    {
+      "disability_count": 1,
+      "student_count": 3,
+      "disability_type": "visual"
+    },
+    {
+      "disability_count": 1,
+      "student_count": 3,
+      "disability_type": "mental"
+    }
+  ]
+}

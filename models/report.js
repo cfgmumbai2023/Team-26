@@ -17,6 +17,9 @@ const reportSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Program",
   },
+  date:{
+    type:Date,
+    required:true,
 });
 
 const Program = mongoose.model("Program", programSchema);

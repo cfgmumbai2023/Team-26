@@ -22,4 +22,4 @@ const reportSchema = new mongoose.Schema({
     required:true,
 });
 
-const Program = mongoose.model("Program", programSchema);
+const Program = mongoose.model("Program", reportSchema);

@@ -45,11 +45,8 @@ const StudentDashboard = () => {
         }
       }
       if (program_ind == 0) {
-        // console.log(obj_label);
         setObjectiveLabel(obj_label);
         setObjectiveValue(obj_value);
-        // console.log(objectiveLabel);
-        // console.log(objectiveLabel);
       }
       let result = sum / count;
       pro_value.push(result);

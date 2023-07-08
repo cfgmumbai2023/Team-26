@@ -1,0 +1,47 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Shyam",
+      "disability": "ADHD",
+      "age": 14,
+      "program": [
+        {
+          "name": "maths",
+          "objective": [{ "name": "fractions", "score": 75 }]
+        },
+        {
+          "name": "communication",
+          "objective": [{ "name": "vocabulary", "score": 45 }]
+        }
+      ],
+      "score": 75
+    },
+    {
+      "id": 2,
+      "name": "ryan",
+      "disability": "dyslexia",
+      "age": 12,
+      "program": [
+        {
+          "name": "communication",
+          "objective": [{ "name": "vocabulary", "score": 65 }]
+        }
+      ],
+      "score": 75
+    },
+    {
+      "id": 3,
+      "name": "shardul",
+      "disability": "deaf",
+      "age": 10,
+      "program": [
+        {
+          "name": "personal development",
+          "objective": [{ "name": "lemon sarbat making", "score": 76 }]
+        }
+      ],
+      "score": 75
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "level1": {
+    "avg_score_per_quarter_y1": 56,
+    "avg_score_per_quarter_y2": 58,
+    "avg_score_per_quarter_y3": 77
+  },
+
+  "level2": {
+    "avg_score_per_quarter_y1": 12,
+    "avg_score_per_quarter_y2": 78,
+    "avg_score_per_quarter_y3": 56
+  },
+
+  "level3": {
+    "avg_score_per_quarter_y1": 45,
+    "avg_score_per_quarter_y2": 34,
+    "avg_score_per_quarter_y3": 56
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "groups": [
+    {
+      "group_number": 1,
+      "student_count": 3,
+      "objective": "mathematics"
+    },
+    {
+      "group_number": 2,
+      "student_count": 6,
+      "objective": "communication"
+    },
+    {
+      "group_number": 3,
+      "student_count": 9,
+      "objective": "personal development"
+    }
+  ]
+}

@@ -1,15 +1,15 @@
 const express = require("express");
 const Student = require("../models/student");
-const { createStudent } = require("../controllers/studentController");
+const {
+  createStudent,
+  getAllStudents,
+  getStudentById,
+} = require("../controllers/studentController");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("get all students");
-});
+router.get("/", getAllStudents);
 
-router.get("/:id", (req, res) => {
-  res.send("get student by id");
-});
+router.get("/:id", getStudentById);
 
 // @desc Create new student
 // @route POST /api/student

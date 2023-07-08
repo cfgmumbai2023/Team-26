@@ -8,13 +8,9 @@ const {
 } = require("../controllers/studentController");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("get all students");
-});
+router.get("/", getAllStudents);
 
-router.get("/:id", (req, res) => {
-  res.send("get student by id");
-});
+router.get("/:id", getStudentById);
 
 router.post("/", createStudent);
 

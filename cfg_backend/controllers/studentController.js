@@ -37,42 +37,46 @@ const createStudent = asyncHandler(async (req, res) => {
     group,
     program,
   });
-  res.status(201).json(student);
+  res.status(201).json(Student);
 });
 
 const getAllStudents = async (req, res) => {
-  try {
-    const users = await Student.find(); // Use appropriate query or method to fetch data from MongoDB
-    res.json(users);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
-
-const getStudentById = async (req, res) => {
-  try {
-    const objectId = req.params.id;
-
-    const object = await findById(objectId);
-
-    if (!object) {
-      return res.status(404).json({ error: "Object not found" });
+  const getAllStudents = async (req, res) => {
+    try {
+      const users = await Student.find(); // Use appropriate query or method to fetch data from MongoDB
+      res.json(users);
+      const users = await Student.find(); // Use appropriate query or method to fetch data from MongoDB
+      res.json(users);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
     }
+  };
 
-    // Send the retrieved object as a response
-    res.json(object);
-  } catch (error) {
-    console.error("Error fetching object:", error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
+  const getStudentById = async (req, res) => {
+    try {
+      const objectId = req.params.id;
+
+      const object = await findById(objectId);
+
+      if (!object) {
+        return res.status(404).json({ error: "Object not found" });
+      }
+
+      // Send the retrieved object as a response
+      res.json(object);
+    } catch (error) {
+      console.error("Error fetching object:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  };
+
+  module.exports = {
+    createStudent,
+    getAllStudents,
+    getStudentById,
+    updateStudent,
+  };
 };
 
-module.exports = {
-  createStudent,
-  getAllStudents,
-  getStudentById,
-  updateStudent,
-};
-
-module.exports = { createStudent, updateStudent };
+module.exports = { createStudent, getAllStudents, getStudentById };

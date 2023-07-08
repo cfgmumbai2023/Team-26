@@ -4,7 +4,6 @@ const Student = require("../models/student");
 // @desc Create new student
 // @route POST /api/students
 // @access private
-
 const createStudent = asyncHandler(async (req, res) => {
   console.log("The request body is :", req.body);
   const {
@@ -41,4 +40,31 @@ const createStudent = asyncHandler(async (req, res) => {
   res.status(201).json(student);
 });
 
-module.exports = { createStudent };
+// @desc Update student
+// @route PATCH /api/student/:id
+// @access private
+
+const updateStudent = asyncHandler(async (req, res) => {
+  const { studentId, programId, newScore } = req.body;
+  try {
+    const student = await Student.findById(studentId);
+
+    const programToUpdate = student.program.find(
+      (program) => program.program.toString() === programId
+    );
+
+    if (!programToUpdate) {
+      console.log("Program not found");
+      return;
+    }
+
+    programToUpdate.score = newScore;
+
+    await student.save();
+    console.log("Score updated successfully");
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+module.exports = { createStudent, updateStudent };

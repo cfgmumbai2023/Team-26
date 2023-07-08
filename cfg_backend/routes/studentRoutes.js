@@ -1,6 +1,9 @@
 const express = require("express");
 const Student = require("../models/student");
-const { createStudent } = require("../controllers/studentController");
+const {
+  createStudent,
+  updateStudent,
+} = require("../controllers/studentController");
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -16,8 +19,6 @@ router.get("/:id", (req, res) => {
 // @access private
 router.post("/", createStudent);
 
-router.patch("/", (req, res) => {
-  res.send("update student");
-});
+router.patch("/", updateStudent);
 
 module.exports = router;

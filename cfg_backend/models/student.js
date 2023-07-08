@@ -55,15 +55,22 @@ const studentSchema = new mongoose.Schema({
 
   program: [
     {
-      program: {
+      programName: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Program",
         required: true,
       },
-      score: {
-        type: Number,
-        required: true,
-      },
+      objective: [
+        {
+          name: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Objective",
+          },
+          score: {
+            type: Number,
+          },
+        },
+      ],
     },
   ],
 });

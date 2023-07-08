@@ -12,10 +12,8 @@ const programSchema = new mongoose.Schema({
 
   objective: [
     {
-      name: {
-        type: String,
-        required: true,
-      },
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Objective",
     },
   ],
 });

@@ -4,7 +4,6 @@ const Student = require("../models/student");
 // @desc Create new student
 // @route POST /api/students
 // @access private
-
 const createStudent = asyncHandler(async (req, res) => {
   console.log("The request body is :", req.body);
   const {

@@ -16,8 +16,6 @@ router.get("/:id", getStudentById);
 // @access private
 router.post("/", createStudent);
 
-router.patch("/", (req, res) => {
-  res.send("update student");
-});
+router.patch("/", updateStudent);
 
 module.exports = router;

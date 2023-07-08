@@ -1,5 +1,5 @@
 {
-  "name": "jpmc_cfg",
+  "name": "cfg_frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {

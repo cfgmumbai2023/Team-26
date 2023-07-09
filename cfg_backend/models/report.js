@@ -5,19 +5,42 @@ const reportSchema = new mongoose.Schema({
     type: String,
     required: [true, "Objective Name is required"],
   },
-  pid: {
+  studentId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Program",
+    ref: "Student",
   },
   level: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Group",
   },
-  objectives: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Program",
+  program: [
+    {
+      programId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Program",
+        required: true,
+      },
+      objective: [
+        {
+          name: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Objective",
+          },
+          score: {
+            type: Number,
+          },
+        },
+      ],
+    },
+  ],
+  year: {
+    type: Date,
+    default: Date.now(),
+  },
+  quarter: {
+    type: Number,
+    required: [true, "Quarter is required"],
   },
 });
 
-const Program = mongoose.model("Program", reportSchema);
-module.exports = Program;
+module.exports = mongoose.model("Report", reportSchema);

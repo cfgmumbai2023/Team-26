@@ -2,7 +2,7 @@ const express = require("express");
 const Student = require("../models/student");
 const {
   createStudent,
-  updateStudent,
+  //   updateStudent,
   getAllStudents,
   getStudentById,
 } = require("../controllers/studentController");
@@ -14,6 +14,6 @@ router.get("/:id", getStudentById);
 
 router.post("/", createStudent);
 
-router.patch("/", updateStudent);
+// router.patch("/", updateStudent);
 
 module.exports = router;

@@ -1,49 +1,27 @@
 const asyncHandler = require("express-async-handler");
-const Student = require("../models/student");
+const Student = require("../models/teacher");
 
 // @desc Create new student
 // @route POST /api/students
 // @access private
 
-const createStudent = asyncHandler(async (req, res) => {
+const createTeacher = asyncHandler(async (req, res) => {
   console.log("The request body is :", req.body);
-  const {
-    udid,
-    name,
-    age,
-    gender,
-    dateOfBirth,
-    dateOfAdmission,
-    address,
-    aadharId,
-    contactNo,
-    disability,
-    schoolName,
-    group,
-    program,
-  } = req.body;
+  const { name, email, password, groups, levels_taught } = req.body;
 
-  const student = await Student.create({
-    udid,
+  const teacher = await Teacher.create({
     name,
-    age,
-    gender,
-    dateOfBirth,
-    dateOfAdmission,
-    address,
-    aadharId,
-    contactNo,
-    disability,
-    schoolName,
-    group,
-    program,
+    email,
+    password,
+    groups,
+    levels_taught,
   });
-  res.status(201).json(Student);
+  res.status(201).json(Teacher);
 });
 
-const getAllStudents = async (req, res) => {
+const getAllTeachers = async (req, res) => {
   try {
-    const users = await Student.find(); // Use appropriate query or method to fetch data from MongoDB
+    const users = await Teacher.find(); // Use appropriate query or method to fetch data from MongoDB
     res.json(users);
   } catch (error) {
     console.error(error);
@@ -51,7 +29,7 @@ const getAllStudents = async (req, res) => {
   }
 };
 
-const getStudentById = async (req, res) => {
+const getTeacherById = async (req, res) => {
   try {
     const objectId = req.params.id;
 
@@ -70,25 +48,25 @@ const getStudentById = async (req, res) => {
 };
 
 const updateData = async (req, res) => {
-  const studentId = req.params.id;
+  const teacherId = req.params.id;
   const updatedData = req.body;
 
   try {
-    const updatedStudent = await Student.findByIdAndUpdate(
-      studentId,
+    const updatedTeacher = await Student.findByIdAndUpdate(
+      teacherId,
       updatedData,
       { new: true }
     );
 
-    if (!updatedStudent) {
+    if (!updatedTeacher) {
       return res.status(404).json({ error: "Student not found" });
     }
 
-    res.json(updatedStudent);
+    res.json(updatedTeacher);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
-module.exports = { createStudent, getAllStudents, getStudentById, updateData };
+module.exports = { createTeacher, getAllTeachers, getTeacherById, updateData };

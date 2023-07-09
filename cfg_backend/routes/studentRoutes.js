@@ -4,6 +4,7 @@ const {
   createStudent,
   getAllStudents,
   getStudentById,
+  updateData,
 } = require("../controllers/studentController");
 const router = express.Router();
 
@@ -16,8 +17,6 @@ router.get("/:id", getStudentById);
 // @access private
 router.post("/", createStudent);
 
-router.patch("/", (req, res) => {
-  res.send("update student");
-});
+router.patch("/:id", updateData);
 
 module.exports = router;

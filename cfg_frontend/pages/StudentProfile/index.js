@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import BarChart from '../../components/generic/chart/BarChart';
 import CardWithHeader from '../../components/generic/CardWithHeader';
 let data = require("../../data/students.json");
+
 const StudentDashboard = () => {
   const [studentData, setStudentData] = useState(null);
   const [programLabel, setProgramLabel] = useState(null);

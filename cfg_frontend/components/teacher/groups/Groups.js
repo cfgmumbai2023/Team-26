@@ -1,13 +1,23 @@
 import CardWithHeader from "@/components/generic/CardWithHeader";
 import StudentListItem from "./StudentListItem";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GroupsData from "../../../data/group.json";
 import StudentsData from "../../../data/students.json";
+import axios from "axios";
 
 const groups = ["1", "2", "3"];
 
 function Groups(props) {
   const [currentGroup, setCurrentGroup] = useState(groups[0]);
+  const [studentsPerGroup, setStudentsPerGroup] = useState([]);
+
+  const fetchData = async () => {
+    const result = await axios.get(`http://localhost:5000/api/group`);
+  };
+
+  useEffect(() => {
+    currentGroup && fetchData();
+  }, [currentGroup]);
 
   const studentsInGroup = StudentsData.students.filter(
     (student) => student.belongsTo === `Group ${currentGroup}`

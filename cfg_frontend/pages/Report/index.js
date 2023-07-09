@@ -19,23 +19,10 @@ export default function index() {
         // Simulated API call to fetch student data
         return new Promise(resolve => {
             setTimeout(() => {
-                resolve(data.students[0]);
+                resolve(Getdata());
             }, 1000);
         });
     };
-
-    const CreateReport = async () => {
-        let result = await fetch("http://localhost:5000/login", {
-            method: "POST",
-            body: JSON.stringify({ email, password }),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-
-        result = await result.json();
-    }
-
 
     const [formData, setFormData] = useState({});
 
@@ -81,7 +68,7 @@ export default function index() {
                         </li>
                     ))}</ul>) : (<p>Loading student data...</p>
             )}
-            <button type="submit" className="submit" onSubmit={CreateReport}>Submit</button>
+            <button type="submit" className="submit my-8" onSubmit={CreateReport}>Submit</button>
             <button type="reset" className="submit">Reset</button>
         </div >
     )

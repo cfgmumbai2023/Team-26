@@ -12,7 +12,7 @@ const SideBar = () => {
       </h1>
       <div className="flex items-center py-2 my-2 border-b-2 border-white">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://www.facebook.com/UrmiFoundation/"
           height="1em"
           viewBox="0 0 448 512"
           fill="#fff"
@@ -41,7 +41,7 @@ const SideBar = () => {
           {" "}
           {!showDrawer && (
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="https://www.facebook.com/UrmiFoundation/"
               height="1em"
               viewBox="0 0 320 512"
               fill="#ffffff"
@@ -51,7 +51,7 @@ const SideBar = () => {
           )}
           {showDrawer && (
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="https://www.facebook.com/UrmiFoundation/"
               height="1em"
               viewBox="0 0 320 512"
               fill="#ffffff"
@@ -82,7 +82,7 @@ const SideBar = () => {
       )}
       <div className="flex items-center py-2 mt-1 border-b-2 border-white ">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://www.facebook.com/UrmiFoundation/"
           height="1em"
           viewBox="0 0 448 512"
           fill="#fff"
@@ -95,7 +95,7 @@ const SideBar = () => {
       </div>
       <div className="flex items-center py-2 mt-1 border-b-2 border-white">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://www.facebook.com/UrmiFoundation/"
           height="1em"
           viewBox="0 0 512 512"
           fill="#fff"
@@ -109,7 +109,7 @@ const SideBar = () => {
 
       <div className="py-2 mt-1 border-b-2 border-white flex items-center">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://www.facebook.com/UrmiFoundation/"
           height="1em"
           viewBox="0 0 448 512"
           fill="#fff"
@@ -122,7 +122,7 @@ const SideBar = () => {
       </div>
       <div className="flex items-center py-2 mt-1 border-b-2 border-white">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://www.facebook.com/UrmiFoundation/"
           height="1em"
           viewBox="0 0 512 512"
           fill="#fff"

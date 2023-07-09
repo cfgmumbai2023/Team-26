@@ -3,25 +3,94 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+            to bottom,
+            transparent,
+            rgb(var(--background-end-rgb))
+        )
+        rgb(var(--background-start-rgb));
+}
+
+.signin-form {
+    padding-left: 40%;
+    padding-top: 5%;
+    font-size: large;
+}
+
+.signin_input {
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 300px;
+}
+
+#signin_submit {
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    width: 320px;
+}
+
+::placeholder {
+    color: purple;
+    opacity: 0.4;
+    font-size: 15px;
+}
+
+.ending {
+    font-size: 20px;
+}
+
+body{
+    background-color: rgb(242, 229, 253);
+    color:purple;
+}
+
+#heading{
+  color:rgb(72, 4, 136);
+}
+
+.form-input{
+  font-size:15px;
+}
+
+.submit {
+    border: 2px solid rgb(242, 229, 253);
+    margin: 10px;
+    padding: 5px;
+    width: 90px;
+    height: 40%;
+    color: rgb(242, 229, 253);
+    background-color: purple;
+}
+.submit:hover {
+    color: white;
+    background-color: rgba(95, 0, 95, 0.8);
+    width: 120px;
+    height: 50px;
+    transition: auto ease-in-out;
 }

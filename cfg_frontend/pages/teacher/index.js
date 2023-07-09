@@ -1,4 +1,4 @@
-import TeacherHome from "@/components/teacher/TeacherHome";
+import TeacherHome from "../../components/teacher/TeacherHome";
 
 function Index() {
   return <TeacherHome />;

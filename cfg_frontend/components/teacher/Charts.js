@@ -1,8 +1,42 @@
+import { Line } from "react-chartjs-2";
 import CardWithHeader from "../generic/CardWithHeader";
 import BarChart from "../generic/chart/BarChart";
 import DoughnutChart from "../generic/chart/DoughnutChart";
+import LineChart from "../generic/chart/LineChart";
+import performance from "../../data/performance.json";
+import Disability from "../../data/disability.json";
+import Groups from "../../data/group.json";
 
+//performance analysis
 const nums = [1, 2, 3, 4, 5];
+const quarter = ["Quarter 1", "Quarter 2", "Quarter 3"];
+const Year_data = Object.keys(performance).map((level) => {
+  console.log(level);
+  const scores = Object.values(performance[level]);
+  //console.log(scores);
+  return scores;
+});
+console.log(Year_data);
+
+//disabiltiy charts
+const disabilityTypes = Disability.disability.map(
+  (item) => item.disability_type
+);
+const disabilityCount = Disability.disability.map(
+  (item) => item.disability_count
+);
+console.log(disabilityTypes);
+
+//studentCount
+const StudentCount = Groups.groups.map(
+  (item) => item.student_count
+);
+const GroupNumber = Groups.groups.map(
+  (item) => item.group_number
+);
+
+
+
 
 function Charts(props) {
   return (
@@ -10,16 +44,29 @@ function Charts(props) {
       <CardWithHeader
         cardClassName="h-[400px] p-8"
         header={
-          <h2 className="text-purple-600 font-medium text-lg">Top 10 Skills</h2>
+          <h2 className="text-purple-600 font-medium text-lg">
+            Performance Analysis
+          </h2>
         }
       >
-        <BarChart
+        <LineChart
           data={{
-            labels: nums,
+            labels: quarter,
             datasets: [
               {
-                data: nums,
+                data: Year_data[0],
                 backgroundColor: ["#FC607C", "#FCA948", "#F3D744", "#14C9C9"],
+                borderColor: ["#FC607C", "#FCA948", "#F3D744", "#14C9C9"],
+              },
+              {
+                data: Year_data[1],
+                backgroundColor: ["#FC607C", "#FCA948", "#F3D744", "#14C9C9"],
+                borderColor: ["#FC607C", "#FCA948", "#F3D744", "#14C9C9"],
+              },
+              {
+                data: Year_data[2],
+                backgroundColor: ["#FC607C", "#FCA948", "#F3D744", "#14C9C9"],
+                borderColor: ["#FC607C", "#FCA948", "#F3D744", "#14C9C9"],
               },
             ],
           }}
@@ -58,16 +105,18 @@ function Charts(props) {
           className="w-[40%]"
           cardClassName="h-[400px] p-8"
           header={
-            <h2 className="text-purple-600 font-medium text-lg">Gender Ratio</h2>
+            <h2 className="text-purple-600 font-medium text-lg">
+              Disability Types
+            </h2>
           }
         >
           <DoughnutChart
             data={{
-              labels: nums,
+              labels: disabilityTypes,
               datasets: [
                 {
-                  data: nums,
-                  backgroundColor: ["#FC607C", "#14C9C9"],
+                  data: disabilityCount,
+                  backgroundColor: ["#FC607C", "#14C9C9", "#F3D744"],
                 },
               ],
             }}
@@ -100,15 +149,17 @@ function Charts(props) {
           className="flex-grow"
           cardClassName="h-[400px] p-8"
           header={
-            <h2 className="text-purple-600 font-medium text-lg">Resume Scores</h2>
+            <h2 className="text-purple-600 font-medium text-lg">
+              Student count as per groups
+            </h2>
           }
         >
           <BarChart
             data={{
-              labels: nums,
+              labels: GroupNumber,
               datasets: [
                 {
-                  data: nums,
+                  data: StudentCount,
                   backgroundColor: ["#FC607C", "#FCA948", "#F3D744", "#14C9C9"],
                 },
               ],

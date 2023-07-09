@@ -2,6 +2,7 @@ import moment from "moment";
 import { useState } from "react";
 import CategoryNavbar from "../generic/CategoryNavbar";
 import Charts from "./Charts";
+import Groups from "./groups/Groups";
 
 const date = moment().format("DD-MM-YYYY");
 const tabs = ["Overview", "Groups"];
@@ -27,7 +28,8 @@ function TeacherHome(props) {
         currentTab={currentTab}
       />
 
-      <Charts />
+      {currentTab == tabs[0] && <Charts />}
+      {currentTab == tabs[1] && <Groups />}
     </div>
   );
 }

@@ -5,6 +5,7 @@
       "name": "Shyam",
       "disability": "ADHD",
       "age": 14,
+      "gender": "Male",
       "program": [
         {
           "name": "maths",
@@ -15,33 +16,38 @@
           "objective": [{ "name": "vocabulary", "score": 45 }]
         }
       ],
-      "score": 75
+      "avgscore": 75,
+      "belongsTo": "Group 1"
     },
     {
       "id": 2,
       "name": "ryan",
       "disability": "dyslexia",
       "age": 12,
+      "gender": "Male",
       "program": [
         {
           "name": "communication",
           "objective": [{ "name": "vocabulary", "score": 65 }]
         }
       ],
-      "score": 75
+      "avgscore": 75,
+      "belongsTo": "Group 2"
     },
     {
       "id": 3,
       "name": "shardul",
       "disability": "deaf",
       "age": 10,
+      "gender": "Male",
       "program": [
         {
           "name": "personal development",
           "objective": [{ "name": "lemon sarbat making", "score": 76 }]
         }
       ],
-      "score": 75
+      "avgscore": 75,
+      "belongsTo": "Group 3"
     }
   ]
 }

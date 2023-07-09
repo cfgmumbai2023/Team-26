@@ -1,5 +1,9 @@
+import GroupsData from "../../../data/group.json";
+import StudentsData from "../../../data/students.json";
 
 function StudentListItem(props) {
+  console.log("This is the data from props: \n");
+  console.log(props.student.id);
   const skillItems = props?.skills?.slice(0, 3)?.map((skill, index) => {
     return (
       <div
@@ -12,8 +16,10 @@ function StudentListItem(props) {
   });
 
   let resumeScoreStyle = "";
+  let averagescore = props.student.avgscore; //display avg score
 
-  if (props?.resumeScore <= 50) {
+  if (props.student.averagescore <= 50) {
+    //display student scores
     resumeScoreStyle = "bg-purple-100 text-purple-600";
   } else if (props?.resumeScore <= 70) {
     resumeScoreStyle = "bg-orange-100 text-orange-600";
@@ -27,18 +33,26 @@ function StudentListItem(props) {
     <div
       className="flex space-x-7 px-6 py-4 items-center bg-white rounded-lg shadow-none"
       onClick={() => {
-        props?.onClick(props?.uid);
+        props?.onClick(props.student.id);
       }}
     >
-      <div className="font-medium text-sm flex-shrink-0">{props?.uid}</div>
+      <div className="font-medium text-sm flex-shrink-0">
+        {props.student.id}
+      </div>
       <div className="w-[20%] flex-shrink-0 ">
-        <h3 className="font-medium text-purple-600 text-sm">{props?.name}</h3>
-        <p className="text-xs">{props?.gender}</p>
+        <h3 className="font-medium text-purple-600 text-sm">
+          {props.student.name}
+        </h3>
+        <p className="text-xs">{props.student.gender}</p>
       </div>
       <div
         className={`flex-shrink-0 text-xs font-medium px-2 py-1 rounded-md ${resumeScoreStyle}`}
-      >{`${props?.resumeScore} %`}</div>
-      <div className="flex space-x-3">{skillItems}</div>
+      >{`${props.student.avgscore} %`}</div>{" "}
+      <div
+        className={`flex-shrink-0 text-xs font-medium px-2 py-1 rounded-md ${resumeScoreStyle}`}
+      >{`${props.student.age}`}</div>{" "}
+      <div className="flex space-x-3">{skillItems}</div>{" "}
+      {props.student.disability}
     </div>
   );
 }

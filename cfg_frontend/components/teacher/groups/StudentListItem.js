@@ -1,15 +1,15 @@
 
 function StudentListItem(props) {
-  const skillItems = props?.skills?.slice(0, 3)?.map((skill, index) => {
-    return (
-      <div
-        key={index}
-        className="text-xs px-3 py-1 font-medium bg-purple-100 text-purple-600 rounded-lg"
-      >
-        {skill}
-      </div>
-    );
-  });
+  // const skillItems = props?.skills?.slice(0, 3)?.map((skill, index) => {
+  //   return (
+  //     <div
+  //       key={index}
+  //       className="text-xs px-3 py-1 font-medium bg-purple-100 text-purple-600 rounded-lg"
+  //     >
+  //       {skill}
+  //     </div>
+  //   );
+  // });
 
   let resumeScoreStyle = "";
 
@@ -38,7 +38,7 @@ function StudentListItem(props) {
       <div
         className={`flex-shrink-0 text-xs font-medium px-2 py-1 rounded-md ${resumeScoreStyle}`}
       >{`${props?.resumeScore} %`}</div>
-      <div className="flex space-x-3">{skillItems}</div>
+      {/* <div className="flex space-x-3">{skillItems}</div> */}
     </div>
   );
 }

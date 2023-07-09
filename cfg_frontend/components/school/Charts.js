@@ -1,9 +1,9 @@
 import CardWithHeader from "../generic/CardWithHeader";
 import BarChart from "../generic/chart/BarChart";
 import DoughnutChart from "../generic/chart/DoughnutChart";
-import { disabilityData } from "@/data/college/disabilityData";
-import { teacherPerformancePerLevel } from "@/data/college/teacherPerformancePerLevel";
-import { performanceScorePerDisability } from "@/data/college/performanceSorePerDisability";
+import { disabilityData } from "../../data/college/disabilityData";
+import { teacherPerformancePerLevel } from "../../data/college/teacherPerformancePerLevel";
+import { performanceScorePerDisability } from "../../data/college/performanceSorePerDisability";
 import { useState } from "react";
 
 const levels = [1, 2, 3];

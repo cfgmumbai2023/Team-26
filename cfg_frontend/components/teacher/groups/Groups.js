@@ -1,4 +1,4 @@
-import CardWithHeader from "@/components/generic/CardWithHeader";
+import CardWithHeader from "../../generic/CardWithHeader";
 import StudentListItem from "./StudentListItem";
 import { useEffect, useState } from "react";
 import GroupsData from "../../../data/group.json";

@@ -1,4 +1,4 @@
-import { teacherData } from "@/data/college/teacherData";
+import { teacherData } from "../../../data/college/teacherData";
 import { useEffect, useState } from "react";
 import CardWithHeader from "../../generic/CardWithHeader";
 import TeacherListItem from "./TeacherListItem";

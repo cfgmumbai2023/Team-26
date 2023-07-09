@@ -1,4 +1,4 @@
-import { studentsPerTeacher } from "@/data/college/studentsPerTeacher";
+import { studentsPerTeacher } from "../../../data/college/studentsPerTeacher";
 
 function Charts() {
   return (

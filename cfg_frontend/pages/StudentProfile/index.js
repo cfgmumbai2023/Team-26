@@ -15,11 +15,14 @@ const StudentDashboard = () => {
     // Fetch student data from an API or any data source
     // and update the state
     fetchStudentData();
+    // getReports();
   }, []);
 
   useEffect(() => {
     if (studentData != null)
       defineData();
+
+    console.log(Getdata())
   }, [studentData])
 
   useEffect(() => {
@@ -73,6 +76,33 @@ const StudentDashboard = () => {
       }
     }
   }
+
+  const Getdata = async () => {
+    let result = await fetch("http://localhost:5000/api/program/64aa09a1010d6a64caf9c0f9");
+
+    result = await result.json();
+    console.log(result);
+    return result;
+}
+
+  // const getReports = async () => {
+  //   // let data = JSON.parse(localStorage.getItem("student"));
+  //   // let studentId = data.studentId;
+  //   // let level = data.level;
+  //   // console.log(studentId);
+  //   // userId = userId._id;
+  //   // let result = await fetch(`http://localhost:5000/program/`, {
+  //   //   method: "POST",
+  //   //   body: JSON.stringify({ studentId, level }),
+  //   //   headers: {
+  //   //     "Content-Type": "application/json",
+  //   //   },
+  //   // });
+
+  //   // result = await result.json();
+  //   // console.log(result);
+  // }
+
   return (
     <div>
       {studentData ? (
@@ -93,7 +123,7 @@ const StudentDashboard = () => {
               datasets: [
                 {
                   data: programValue,
-                  backgroundColor: ["#FC607C", "#FCA948", "#F3D744", "#14C9C9"],
+                  backgroundColor: ["#802992", "#564a00", "#F3D744", "#14C9C9"],
                 },
               ],
             }} options={{
@@ -135,7 +165,7 @@ const StudentDashboard = () => {
               datasets: [
                 {
                   data: objectiveValue,
-                  backgroundColor: ["#FC607C", "#FCA948", "#F3D744", "#14C9C9"],
+                  backgroundColor: ["#802992", "#564a0a", "#F3D744", "#14C9C9"],
                 },
               ],
             }} options={{
@@ -160,7 +190,8 @@ const StudentDashboard = () => {
                 },
               },
             }} /> </CardWithHeader>
-
+          <legend className='my-8'>Additional note:</legend>
+          <textarea name="message" id="message" cols="40" rows="10" placeholder="Type the extra info here."></textarea>
           {/* <h3>Assignments:</h3>
           <ul>
             {studentData.assignments.map(assignment => (

@@ -8,7 +8,7 @@ import Disability from "../../data/disability.json";
 import Groups from "../../data/group.json";
 
 //performance analysis
-const nums = [1, 2, 3, 4, 5];
+const nums = [1, 2, 3];
 const quarter = ["Quarter 1", "Quarter 2", "Quarter 3"];
 const Year_data = Object.keys(performance).map((level) => {
   console.log(level);
@@ -28,15 +28,8 @@ const disabilityCount = Disability.disability.map(
 console.log(disabilityTypes);
 
 //studentCount
-const StudentCount = Groups.groups.map(
-  (item) => item.student_count
-);
-const GroupNumber = Groups.groups.map(
-  (item) => item.group_number
-);
-
-
-
+const StudentCount = Groups.groups.map((item) => item.student_count);
+const GroupNumber = Groups.groups.map((item) => item.group_number);
 
 function Charts(props) {
   return (
@@ -44,9 +37,29 @@ function Charts(props) {
       <CardWithHeader
         cardClassName="h-[400px] p-8"
         header={
-          <h2 className="text-purple-600 font-medium text-lg">
-            Performance Analysis
-          </h2>
+          <div className="items-center justify-end">
+            <h2 className="text-purple-600 font-medium text-lg">
+              Performance Analysis
+            </h2>
+            <div>
+              <div>
+                <h2>Year: </h2>
+                <select>
+                  <option>Year 1</option>
+                  <option>Year 2</option>
+                  <option>Year 3</option>
+                </select>
+              </div>
+              <div>
+                <h2>Level: </h2>
+                <select>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+              </div>
+            </div>
+          </div>
         }
       >
         <LineChart
